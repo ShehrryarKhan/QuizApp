@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Quiz App</title>
+</head>
+<body>
+  <!-- Starry Background -->
+  <div class="stars"></div>
+
+  <!-- Quiz Selection Section -->
+  <div id="quizSelection">
+    <h1 class="title">Select a Quiz</h1>
+    <div class="quiz-cards">
+      <div class="quiz-card" onclick="startQuiz('HTML')">
+        <img src="images/html.png" alt="HTML">
+        <h2>HTML Quiz</h2>
+      </div>
+      <div class="quiz-card" onclick="startQuiz('CSS')">
+        <img src="images/text.png" alt="CSS">
+        <h2>CSS Quiz</h2>
+      </div>
+      <div class="quiz-card" onclick="startQuiz('JavaScript')">
+        <img src="images/java-script.png" alt="JavaScript">
+        <h2>JavaScript Quiz</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Container -->
+  <div id="quizContainer" style="display: none;">
+    <h1 id="quizTitle"></h1>
+    <div id="timer" class="timer">59</div>
+    <div id="quizBox" class="quiz-box">
+      <p id="question" class="question"></p>
+      <div class="options">
+        <label class="option">
+          <input value="1" type="radio" name="answer" />
+          <span id="option1"></span>
+        </label>
+        <label class="option">
+          <input value="2" type="radio" name="answer" />
+          <span id="option2"></span>
+        </label>
+        <label class="option">
+          <input value="3" type="radio" name="answer" />
+          <span id="option3"></span>
+        </label>
+      </div>
+    </div>
+    <button id="btn" class="btn" onclick="checkAnswer()">Next</button>
+  </div>
+
+ <!-- Result Container (Hidden by Default) -->
+<div id="resultContainer" class="result-container" style="display: none;">
+    <h1 class="result-message">Congratulations!</h1>
+    <p class="score-message">Your Score: <span id="finalScore">0</span>/<span id="totalQuestions">0</span></p>
+    <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
