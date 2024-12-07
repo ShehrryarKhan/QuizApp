@@ -1,8 +1,8 @@
-/* Global styles */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000000, #121212);
+    background: linear-gradient(135deg, #0f0f0f, #000000);
     color: white;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-/* Starry Night Background with Falling Stars */
+
 .stars {
     position: absolute;
     top: 0;
@@ -56,15 +56,67 @@ body {
     }
 }
 
-/* Title style */
+
 .title {
+    font-size: 3rem;
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 20px;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    color: #ffcc00;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #ffcc00, #ff9900, #ffcc00);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientFlow 5s infinite linear, smokyVanishAndWrite 7s infinite ease-in-out;
+    text-shadow: 1px 1px 5px rgba(255, 204, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateX(10deg);
 }
 
-/* Quiz selection cards */
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+
+@keyframes smokyVanishAndWrite {
+    0% {
+        text-shadow: 1px 1px 5px rgba(255, 204, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+    20% {
+        text-shadow: 1px 1px 10px rgba(255, 204, 0, 0.5), -1px -1px 10px rgba(255, 255, 255, 0.2), 5px 5px 20px rgba(0, 0, 0, 0.5);
+        opacity: 0.8;
+    }
+    40% {
+        text-shadow: 1px 1px 20px rgba(255, 204, 0, 0.3), -1px -1px 20px rgba(255, 255, 255, 0.3), 5px 5px 30px rgba(0, 0, 0, 0.5);
+        opacity: 0.5;
+    }
+    60% {
+        text-shadow: 1px 1px 30px rgba(255, 204, 0, 0.2), -1px -1px 30px rgba(255, 255, 255, 0.4), 5px 5px 40px rgba(0, 0, 0, 0.5);
+        opacity: 0.2;
+    }
+    80% {
+        text-shadow: 1px 1px 40px rgba(255, 204, 0, 0.1), -1px -1px 40px rgba(255, 255, 255, 0.5), 5px 5px 50px rgba(0, 0, 0, 0.5);
+        opacity: 0.1;
+    }
+    100% {
+        text-shadow: 1px 1px 5px rgba(255, 204, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+}
+
+
+
+
 .quiz-cards {
     display: flex;
     gap: 20px;
@@ -74,15 +126,18 @@ body {
 .quiz-card {
     width: 200px;
     height: 250px;
-    background: #ffffff10;
+    background: linear-gradient(145deg, #282828, #1c1c1c);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     perspective: 1000px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
 }
 
 .quiz-card img {
@@ -95,18 +150,22 @@ body {
 .quiz-card h2 {
     font-size: 1.2rem;
     text-align: center;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2);
 }
 
 .quiz-card:hover {
-    transform: scale(1.1) rotateY(10deg);
-    box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.2);
+    transform: scale(1.1) rotateX(10deg) rotateY(-10deg);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.9), -10px -10px 20px rgba(255, 255, 255, 0.2);
+    border: 1px solid #ffcc00;
+    background: linear-gradient(145deg, #1c1c1c, #282828);
 }
 
 .quiz-card:hover img {
     transform: rotate(360deg);
 }
 
-/* Quiz container */
+
 #quizContainer {
     width: 80%;
     max-width: 500px;
@@ -119,7 +178,7 @@ body {
     animation: fadeIn 0.5s ease forwards;
 }
 
-/* Timer */
+
 .timer {
     font-size: 2rem;
     font-weight: bold;
@@ -128,7 +187,7 @@ body {
     text-shadow: 0px 4px 10px rgba(255, 204, 0, 0.7);
 }
 
-/* Question and options */
+
 .question {
     font-size: 1.4rem;
     margin-bottom: 20px;
@@ -159,7 +218,7 @@ body {
     accent-color: #ffcc00;
 }
 
-/* Next button */
+
 .btn {
     background: #ffcc00;
     border: none;
@@ -178,99 +237,3 @@ body {
     transform: scale(1.05);
 }
 
-.snow {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: snowFall 10s linear infinite;
-}
-
-@keyframes snowFall {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
-
-/* Result Page Styles */
-.result-container {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #000000, #121212);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: fadeInResult 1s forwards;
-}
-
-@keyframes fadeInResult {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.result-message {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: textReveal 1.5s ease forwards;
-}
-
-@keyframes textReveal {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.score-message {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    opacity: 0;
-    animation: scoreReveal 2s ease 1s forwards;
-}
-
-@keyframes scoreReveal {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}

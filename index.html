@@ -7,10 +7,8 @@
   <title>Quiz App</title>
 </head>
 <body>
-  <!-- Starry Background -->
+  
   <div class="stars"></div>
-
-  <!-- Quiz Selection Section -->
   <div id="quizSelection">
     <h1 class="title">Select a Quiz</h1>
     <div class="quiz-cards">
@@ -28,8 +26,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Quiz Container -->
   <div id="quizContainer" style="display: none;">
     <h1 id="quizTitle"></h1>
     <div id="timer" class="timer">59</div>
@@ -52,15 +48,13 @@
     </div>
     <button id="btn" class="btn" onclick="checkAnswer()">Next</button>
   </div>
-
- <!-- Result Container (Hidden by Default) -->
 <div id="resultContainer" class="result-container" style="display: none;">
-    <h1 class="result-message">Congratulations!</h1>
-    <p class="score-message">Your Score: <span id="finalScore">0</span>/<span id="totalQuestions">0</span></p>
-    <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
-  </div>
-  
+  <h1 class="result-message">Congratulations!</h1>
+  <p class="score-message">Your Score: <span id="finalScore">0</span>/<span id="totalQuestions">0</span></p>
+  <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+</div>
 
+  
   <script src="app.js"></script>
 </body>
 </html>
